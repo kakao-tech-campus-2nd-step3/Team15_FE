@@ -2,7 +2,7 @@
 name: "\U0001F41E BUG"
 about: BUG 발생 시 작성하세요.
 title: "[BUG]"
-labels: documentation
+labels: "\U0001F41EBUG"
 assignees: joshuayeyo
 
 ---
