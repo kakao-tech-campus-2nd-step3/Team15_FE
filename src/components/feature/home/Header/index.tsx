@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { Link } from 'react-router-dom';
 
-import { RouterPath } from '@/routes/path';
 
 const MainHeader = () => {
   const handleClick = () => {
@@ -10,11 +8,7 @@ const MainHeader = () => {
   };
   return (
   <Wrapper>
-    <Left>
-        <Link to={RouterPath.home}>
-          {/* 아직 홈페이지 없는 상태라 작동X. 빌드도 오류 날 것임. */}
-          Rebit {/* 레빗로고 이미지 따서 올려야함 */}
-        </Link>
+      <Left>
       </Left>
       <Right>
         <GiHamburgerMenu size={30} color={'white'} onClick={handleClick} />
@@ -26,7 +20,7 @@ const MainHeader = () => {
 const Wrapper = styled.header`
   width: 100%;
   max-width: 100vw;
-  height: 30px;
+  height: 50px;
   display: flex;
   background-color: black;
 `;
@@ -36,6 +30,7 @@ const Left = styled.div`
 `;
 
 const Right = styled.div`
+  padding: 10px;
   margin-left: auto;
   cursor: pointer;
 `;
