@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "@/pages/Home";
+import LoginPage from "@/pages/Login";
+
 // import LoginPage from "@/pages/Login";
 
 import { RouterPath } from "./path";
@@ -23,10 +25,10 @@ const router = createBrowserRouter([
     //         }
     //     ]
     // },
-    // {
-    //     path: RouterPath.login,
-    //     element: <LoginPage />,
-    // },
+    {
+        path: RouterPath.login,
+        element: <LoginPage />,
+    },
 ]);
 
 export const Routes = () => {
