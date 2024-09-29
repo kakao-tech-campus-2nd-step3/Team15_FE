@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { ReactComponent as Logo } from '@/assets/Rebit.svg';
 //import axios from 'axios';
 import LoginButton from '@/components/feature/login/LoginButton';
 
@@ -26,6 +27,7 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
+      <Logo/>
       <h1 className="title">Rebit</h1>
       <p className="description">당신의 독서 습관 플랫폼 Rebit</p>
       <LoginButton />
