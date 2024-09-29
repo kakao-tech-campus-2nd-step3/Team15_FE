@@ -1,19 +1,9 @@
-import { Button } from '@chakra-ui/react';
-
+import { Image } from '@chakra-ui/react';
+import kakao_login from '@/assets/kakao_login.png'
 const REST_API_KEY = import.meta.env.VITE_KAKAO_JS_KEY;
 const REDIRECT_URI = 'http://localhost:3000/';  
 
 const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-
-const kakaoButtonStyles = {
-  backgroundColor: "#ffeb00",   
-  color: "#000000",            
-  _hover: { backgroundColor: "#e6d700" }, 
-  borderRadius: "md",           
-  padding: "8px 16px",          
-  fontWeight: "bold",          
-  fontSize: "16px",          
-};
 
 const LoginButton = () => {
   const handleLogin = () => {
@@ -21,9 +11,9 @@ const LoginButton = () => {
   };
 
   return (
-    <Button onClick={handleLogin} {...kakaoButtonStyles}>
-      카카오 로그인
-    </Button>
+    <>
+      <Image onClick={handleLogin} src={kakao_login} width="400px" margin="30px" cursor="pointer"/>
+    </>
   );
 };
 
