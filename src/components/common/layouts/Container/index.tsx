@@ -8,7 +8,7 @@ type Props = {
     alignItems?: 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'stretch';
 } & React.HTMLAttributes<HTMLDivElement>
 
-const Container: React.FC<Props> = forwardRef(
+const CommonContainer: React.FC<Props> = forwardRef(
     (
         { children, maxWidth, flexDirection, justifyContent, alignItems, ...props }: Props,
         ref: React.Ref<HTMLDivElement>,
@@ -46,4 +46,4 @@ justify-content: ${({ justifyContent }) => justifyContent ?? 'flex-start'};
 align-items: ${({ alignItems }) => alignItems ?? 'flex-start'};
 `;
 
-export default Container;
+export default CommonContainer;
