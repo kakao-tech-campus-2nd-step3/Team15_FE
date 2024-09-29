@@ -1,12 +1,14 @@
+import styled from '@emotion/styled';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { ReactComponent as Logo } from '@/assets/Rebit.svg';
+import  Logo  from '@/assets/Rebit.svg?react';
 //import axios from 'axios';
 import LoginButton from '@/components/feature/login/LoginButton';
+import { Flex } from '@chakra-ui/react';
 
 const LoginPage = () => {
   const location = useLocation();
-
+  
   useEffect(() => {
     /*
     const code = new URLSearchParams(location.search).get('code'); // URL에서 인증 코드 추출
@@ -18,21 +20,35 @@ const LoginPage = () => {
           localStorage.setItem('jwt_token', response.data.token);
           // 로그인 성공 후 홈 페이지로 리디렉트
           window.location.href = '/home';
-        })
-        .catch(error => {
-          console.error('로그인 실패:', error);
-        });
-    }*/
+          })
+          .catch(error => {
+            console.error('로그인 실패:', error);
+            });
+            }*/
   }, [location]);
-
+  
   return (
-    <div className="login-container">
-      <Logo/>
-      <h1 className="title">Rebit</h1>
-      <p className="description">당신의 독서 습관 플랫폼 Rebit</p>
+    <Flex
+    height="100vh"          // 전체 창 높이를 차지
+    justifyContent="center"  // 가로 중앙 정렬
+    alignItems="center"      // 세로 중앙 정렬
+    flexDirection="column"   // 자식 요소들을 세로로 정렬
+    textAlign="center"
+    >
+      <Logo />
+      <Content>
+        당신의 독서 습관 플랫폼 Rebit
+      </Content>
       <LoginButton />
-    </div>
+    </Flex> 
   );
 };
 
 export default LoginPage;
+
+const Content = styled.p`
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 20px;
+`
