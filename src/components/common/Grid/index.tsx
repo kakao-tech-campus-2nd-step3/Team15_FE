@@ -15,7 +15,6 @@ const CommonGrid: React.FC<Props> = ({ children, columns, ...props }: Props ) =>
 
 const Wrapper = styled.div<Pick<Props, 'columns' | 'gap'>>(
     {
-        width: '100%',
         display: 'grid',
     },
     ({ gap }) => ({
