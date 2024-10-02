@@ -1,17 +1,20 @@
 import styled from '@emotion/styled';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { useState } from 'react';
 
 
 const MainHeader = () => {
-  const handleClick = () => {
-    alert('사이드바 열기');
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleSide = () =>{
+    setIsOpen(true);
   };
+
   return (
   <Wrapper>
       <Left>
       </Left>
       <Right>
-        <GiHamburgerMenu size={30} color={'white'} onClick={handleClick} />
+        <GiHamburgerMenu size={30} color={'white'} onClick={toggleSide}/>
       </Right>
     </Wrapper>
   );
