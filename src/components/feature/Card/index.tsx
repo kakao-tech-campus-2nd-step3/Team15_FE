@@ -15,6 +15,7 @@ const CommonCard = ({ maxWidth, imageURL, title, content, profileImage ,username
     return(
         <>
             <Card maxW={maxWidth}>
+                {/* <Link></Link> 추가해서 카드 누르면 해당 게시글로 갈 수 있게 */}
                 <CardBody>
                     <CommonImage 
                         src={imageURL}
