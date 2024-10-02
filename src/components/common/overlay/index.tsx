@@ -11,7 +11,7 @@ const OverlayWrapper = styled.div<OverlayProps>`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 5;
   visibility: ${(props) => (props.isOpen ? 'visible' : 'hidden')};
   opacity: ${(props) => (props.isOpen ? 0.5 : 0)};
   transition: opacity 0.3s ease;
