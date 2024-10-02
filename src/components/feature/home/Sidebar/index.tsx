@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Divider,Box } from '@chakra-ui/react';
 import  Instgram  from '@/assets/Instagram.svg?react';
 import  Git  from '@/assets/Github.svg?react';
+import { Link } from 'react-router-dom';
 const SideBarWrap = styled.div`  
 z-index: 10;  
 padding: 12px;  
@@ -70,7 +71,9 @@ const LoginButton = styled(StyledButton)`
           <StyledButton>MyPage</StyledButton><br/>
 
         <Box display="flex" justifyContent="center" marginTop="auto">
-          <LoginButton>login</LoginButton>
+          <Link to="/login">
+            <LoginButton>login</LoginButton>
+          </Link>
         </Box>
         </SideBarWrap>  
       </>    
