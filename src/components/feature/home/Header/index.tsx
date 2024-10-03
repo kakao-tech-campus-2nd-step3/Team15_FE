@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState } from 'react';
-import Sidebar from "../Sidebar";
+import Sidebar from "@/components/common/Sidebar";
 import OverlayWrapper from '@/components/common/overlay';
 
 const MainHeader = () => {
