@@ -1,9 +1,8 @@
 import { useRef, useEffect } from 'react';
 import styled from "@emotion/styled";
 import { Divider,Box } from '@chakra-ui/react';
-import  Instgram  from '@/assets/Instagram.svg?react';
-import  Git  from '@/assets/Github.svg?react';
 import { Link } from 'react-router-dom';
+import { FiGithub, FiInstagram } from 'react-icons/fi';
 const SideBarWrap = styled.div`  
 z-index: 10;  
 padding: 12px;  
@@ -22,7 +21,7 @@ background-color: none;
 color: black;
 border: none;
 padding: 10px 20px;
-font-size: 60px;
+font-size: 5vw;
 font-weight: bold;
 cursor: pointer;
 &:hover {
@@ -33,6 +32,7 @@ cursor: pointer;
 const LoginButton = styled(StyledButton)`
   position: absolute;
   bottom: 20px; /* 하단에서 20px 위에 고정 */
+  font-size: 3vw;
   left: 50%;
   transform: translateX(-50%);
 `;
@@ -56,13 +56,18 @@ const LoginButton = styled(StyledButton)`
               return (
       <>
         <SideBarWrap id="sidebar" ref={outside} className={isOpen ? 'open' : ''}>
-        <Box display="flex" justifyContent="flex-end" alignItems="center" height="50px" mb="10px">
-          <Instgram style={{ marginRight: '10px' }} />
-          <Git style={{ marginRight: '70px' }}/>
+        <Box display="flex" justifyContent="flex-end" alignItems="center" height="50px" mb="10px" marginRight={"5vw"}>
+          <Link to="https://www.instagram.com/katarinabluu/">
+                <FiInstagram color="black" size="3rem" />
+          </Link>
+          <Box margin={"10px"}/>
+          <Link to="https://github.com/kakao-tech-campus-2nd-step3/Team15_FE">
+            <FiGithub color="black" size="3rem" />
+          </Link>
         </Box> 
 
         <Box display="flex" justifyContent="center">
-           <Divider orientation="horizontal" borderColor="gray.800" width="80%" />
+          <Divider orientation="horizontal" borderColor="gray.800" width="80%" />
         </Box>
 
           <StyledButton>Feed</StyledButton><br/>
