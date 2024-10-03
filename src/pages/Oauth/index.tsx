@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Flex, Spinner } from '@chakra-ui/react';
 // import axios from 'axios';
 
 const OauthPage = () => {
@@ -19,6 +20,12 @@ const OauthPage = () => {
     //     });
     // }
   }, [location]);
+  return(
+    <Flex justify="center" textAlign="center">
+
+      <Spinner/>
+    </Flex>
+  )
 }
 
 export default OauthPage;
