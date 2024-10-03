@@ -1,31 +1,32 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled';
+
+import StorySample from '@/assets/Main/Story.svg?react';
+import LandingItems from '../Section/Landing-items';
 
 const StoryIntro = () => {
-    return(
-        <Wrapper>
-            <Left>
-                루쉰이 희망에 대해 말하다.
-            </Left>
-            <Right>
-            </Right>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <Left>
+        <StorySample />
+      </Left>
+      <Right>
+        <LandingItems />
+      </Right>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
-    height: 100vh;
-    display: flex;
-    scroll-snap-align: start;
-`
+  height: 100vh;
+  display: flex;
+  scroll-snap-align: start;
+`;
 const Left = styled.div`
-    width: 50vw;
-    background-color: #282828;
-    color: white;
-`
+  width: 50vw;
+`;
 const Right = styled.div`
-    width: 50vw;
-    background-color: #FF72C0;
-    color: white;
-`
+  width: 50vw;
+  display: flex;
+`;
 
 export default StoryIntro;
