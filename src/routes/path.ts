@@ -7,6 +7,7 @@ export const RouterPath = {
     login: '/login',  // 로그인 페이지
     notFound: '/*',
     Oauth: REDIRECT_PATH, // 소셜로그인 리다이렉트 주소 
+    feed: '/feed',
 };
 
 // 지금은 필요 X; 논의 후 구현

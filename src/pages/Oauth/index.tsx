@@ -22,7 +22,6 @@ const OauthPage = () => {
   }, [location]);
   return(
     <Flex justify="center" textAlign="center">
-
       <Spinner/>
     </Flex>
   )

@@ -32,7 +32,7 @@ cursor: pointer;
   
 const LoginButton = styled(StyledButton)`
   position: absolute;
-  bottom: 20px; /* 하단에서 20px 위에 고정 */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
 `;
@@ -49,11 +49,13 @@ const LoginButton = styled(StyledButton)`
     const handlerOutsie = (e: any) => {
       if (!outside.current.contains(e.target)) {
         toggleSide();    }  
-              };   
-              const toggleSide = () => {
-                setIsOpen(false);  
-              };   
-              return (
+    };
+
+    const toggleSide = () => {
+      setIsOpen(false);  
+    };   
+    
+    return (
       <>
         <SideBarWrap id="sidebar" ref={outside} className={isOpen ? 'open' : ''}>
         <Box display="flex" justifyContent="flex-end" alignItems="center" height="50px" mb="10px">
@@ -64,8 +66,9 @@ const LoginButton = styled(StyledButton)`
         <Box display="flex" justifyContent="center">
            <Divider orientation="horizontal" borderColor="gray.800" width="80%" />
         </Box>
-
-          <StyledButton>Feed</StyledButton><br/>
+          <Link to="/feed">
+            <StyledButton>Feed</StyledButton><br/>
+          </Link>
           <StyledButton>Challenge</StyledButton><br/>
           <StyledButton>Diary</StyledButton><br/>
           <StyledButton>MyPage</StyledButton><br/>
