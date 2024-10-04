@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState } from 'react';
-import Sidebar from "../Sidebar";
+import Sidebar from "@/components/common/Sidebar";
 import OverlayWrapper from '@/components/common/overlay';
 
 const MainHeader = () => {
@@ -15,7 +15,7 @@ const MainHeader = () => {
       <Left>
       </Left>
       <Right>
-        <GiHamburgerMenu size={30} color={'white'} onClick={toggleSide}/>
+        <GiHamburgerMenu size={'3vw'} color={'white'} onClick={toggleSide}/>
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
         <OverlayWrapper isOpen={isOpen}/>
       </Right>
@@ -26,7 +26,7 @@ const MainHeader = () => {
 const Wrapper = styled.header`
   width: 100%;
   max-width: 100vw;
-  height: 50px;
+  height: 4vw;
   display: flex;
   background-color: black;
 `;
