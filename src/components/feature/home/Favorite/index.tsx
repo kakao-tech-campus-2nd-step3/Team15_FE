@@ -1,31 +1,33 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled';
+
+import Favorite from '@/assets/Main/Favorite.svg?react';
+import LandingItems from '../Section/Landing-items';
 
 const FavoriteIntro = () => {
-    return(
-        <Wrapper>
-            <Left>
-                장원영이 읽고 감명 받은 인생 책..
-            </Left>
-            <Right>
-            </Right>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <Left>
+        <Favorite />
+      </Left>
+      <Right>
+        <LandingItems />
+      </Right>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
-    height: 100vh;
-    display: flex;
-    scroll-snap-align: start;
-`
+  height: 100vh;
+  display: flex;
+  scroll-snap-align: start;
+`;
 const Left = styled.div`
-    width: 50vw;
-    background-color: #282828;
-    color: white;
-`
+  width: 50vw;
+`;
 const Right = styled.div`
-    width: 50vw;
-    background-color: #89FF56;
-    color: white;
-`
+  width: 50vw;
+  background-color: #89ff56;
+  display: flex;
+`;
 
 export default FavoriteIntro;
