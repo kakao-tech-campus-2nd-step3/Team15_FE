@@ -4,7 +4,7 @@ import Logo from "@/assets/Main/Rebit.svg?react";
 const Mainlogo = () => {
     return(
         <CommonContainer
-        maxWidth={"90vw"}
+        maxWidth={"100vw"}
         flexDirection={"row"}
         justifyContent={"center"}
         alignItems={"baseline"}
