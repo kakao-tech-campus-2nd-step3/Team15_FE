@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { Divider,Box } from '@chakra-ui/react';
 import { Link, Navigate } from 'react-router-dom';
 import { FiGithub, FiInstagram } from 'react-icons/fi';
-import { RouterPath } from '@/routes/path';
 const SideBarWrap = styled.div`  
 z-index: 10;  
 padding: 12px;  
