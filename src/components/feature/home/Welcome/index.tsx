@@ -1,30 +1,27 @@
-import styled from "@emotion/styled";
-import MainHeader from "../Header";
+import styled from '@emotion/styled';
+import MainHeader from '@/components/feature/home/Header';
+import Mainlogo from './logo';
 
 const Welcome = () => {
-    return (
-        <Wrapper>
-            <MainHeader />
-            <Text>
-                Rebit
-            </Text>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <MainHeader />
+      <Box>
+        <Mainlogo />
+      </Box>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
-    width: 100%;
-    height: 100vh;
-    scroll-snap-align: end;
-    background-color: black
-`
-const Text = styled.div`
-    font-family: 'Pretendard-Regular';
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 45vw;
-    margin-top: 10%;
-`
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: end;
+  background-color: black;
+`;
+
+const Box = styled.div`
+  margin-top: 10%;
+`;
 
 export default Welcome;
