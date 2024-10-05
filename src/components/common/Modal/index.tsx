@@ -1,11 +1,11 @@
 import Overlay from "@/components/common/overlay";
 import styled from "@emotion/styled";
 import { Button } from "../Button";
-import CommonContainer from "../layouts/Container";
 
 type Props = {
     isModalOpen: boolean;
     handleModalClose: () => void;
+    children: React.ReactNode;
 }
 
 const CommonModal = ({ children, isModalOpen, handleModalClose }: Props) => {
@@ -30,16 +30,7 @@ const CommonModal = ({ children, isModalOpen, handleModalClose }: Props) => {
                     </Button>
                 </ButtonContainer>
                 <ContentSection>
-                    <Left>
-                        <CommonContainer>
-                            {children}
-                        </CommonContainer>
-                    </Left>
-                    <Right>
-                        <CommonContainer>
-                            {children}
-                        </CommonContainer>
-                    </Right>
+                    {children}
                 </ContentSection>
 
             </ModalContainer>
@@ -78,16 +69,4 @@ const ContentSection = styled.section`
     margin-top: 1rem;
     justify-content: center;
     align-items: center;
-`
-
-const Left = styled.section`
-    width: 50%;
-    background-color: yellow;
-    height: 100%;
-`
-
-const Right = styled.section`
-    width: 50%;
-    background-color: green;
-    height: 100%;
 `
