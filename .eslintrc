@@ -1,5 +1,8 @@
 {
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint"],
-    "extends": ["plugin:@typescript-eslint/recommended", "prettier", "plugin:storybook/recommended"]
+    "extends": ["plugin:@typescript-eslint/recommended", "prettier", "plugin:storybook/recommended"],
+    "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+    }
 }

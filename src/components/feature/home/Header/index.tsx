@@ -26,7 +26,7 @@ const MainHeader = () => {
 const Wrapper = styled.header`
   width: 100%;
   max-width: 100vw;
-  height: 50px;
+  height: 4vw;
   display: flex;
   background-color: black;
 `;

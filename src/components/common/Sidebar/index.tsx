@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import styled from "@emotion/styled";
 import { Divider,Box } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { FiGithub, FiInstagram } from 'react-icons/fi';
 const SideBarWrap = styled.div`  
 z-index: 10;  
@@ -41,12 +41,12 @@ const LoginButton = styled(StyledButton)`
   function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: any }) {  
     const outside = useRef<any>();   
     useEffect(() => {    
-      document.addEventListener('mousedown', handlerOutsie);    
+      document.addEventListener('mousedown', handlerOutside);    
       return () => {      
-        document.removeEventListener('mousedown', handlerOutsie);    
+        document.removeEventListener('mousedown', handlerOutside);    
       }; 
     });   
-    const handlerOutsie = (e: any) => {
+    const handlerOutside = (e: any) => {
       if (!outside.current.contains(e.target)) {
         toggleSide();    }  
               };   
@@ -70,7 +70,9 @@ const LoginButton = styled(StyledButton)`
           <Divider orientation="horizontal" borderColor="gray.800" width="80%" />
         </Box>
 
-          <StyledButton>Feed</StyledButton><br/>
+          <StyledButton>
+            <Link to="/feed">Feed</Link>
+          </StyledButton><br/>    
           <StyledButton>Challenge</StyledButton><br/>
           <StyledButton>Diary</StyledButton><br/>
           <StyledButton>MyPage</StyledButton><br/>

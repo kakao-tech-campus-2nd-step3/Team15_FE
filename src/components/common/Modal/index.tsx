@@ -5,6 +5,7 @@ import { Button } from "@/components/common/Button";
 type Props = {
     isModalOpen: boolean;
     handleModalClose: () => void;
+    children: React.ReactNode;
 }
 
 const CommonModal = ({ children, isModalOpen, handleModalClose }: Props) => {
