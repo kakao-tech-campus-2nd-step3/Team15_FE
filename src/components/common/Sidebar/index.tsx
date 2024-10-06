@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import styled from "@emotion/styled";
 import { Divider,Box } from '@chakra-ui/react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FiGithub, FiInstagram } from 'react-icons/fi';
 const SideBarWrap = styled.div`  
 z-index: 10;  
