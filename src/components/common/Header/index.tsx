@@ -32,7 +32,7 @@ const CommonHeader = () => {
 const Wrapper = styled.header`
     width: 100%;
     max-width: 100vw;
-    height: 3vw;
+    height: 2.5vh;
     display: flex;
 `;
 
