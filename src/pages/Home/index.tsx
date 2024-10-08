@@ -4,8 +4,29 @@ import ChalleneIntro from '@/components/feature/home/Challege';
 import FavoriteIntro from '@/components/feature/home/Favorite';
 import StoryIntro from '@/components/feature/home/Story';
 import Footer from '@/components/feature/home/Footer';
+import axios from 'axios';
+import { useEffect } from 'react';
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
+
 
 const Homepage = () => {
+  useEffect(() => {
+    const code = new URLSearchParams(location.search).get('code');
+    if (code) {
+      axios.get(`${VITE_BASE_URL}/api/auth/login/oauth/kakao`, {
+        params: { code: code },
+      })
+        .then(response => {
+          localStorage.setItem('jwt_token', JSON.stringify(response.data.token));
+          window.location.href = '/';
+          console.log(response.data.token);
+          })
+          .catch(error => {
+            console.error('로그인 실패:', error);
+          });
+    }
+  }, [location]);
+
   return (
     <Wrapper>
       <Welcome />
