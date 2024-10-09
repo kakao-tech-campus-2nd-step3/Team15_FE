@@ -34,10 +34,6 @@ const router = createBrowserRouter([
         element: <LoginPage />,
     },
     {
-        path: RouterPath.Oauth,
-        element: <OauthPage />,
-    },
-    {
         path: RouterPath.feed,
         element: <FeedPage />,
     },
