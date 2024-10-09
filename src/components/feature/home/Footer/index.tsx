@@ -53,7 +53,7 @@ const Container = styled.div`
     margin-left: 5vw;
 `
 
-const Text = styled.text`
+const Text = styled.p`
     font-family: 'DungGeunMo';
     font-weight: bold;
     font-size: 30px;
