@@ -24,7 +24,7 @@ const FeedItemSection = () => {
     async function getFeedData() {
       try {
         const res = await axios.get(`${BASE_URL}/api/feeds`);
-        const result = await res.data;
+        const result = await res.data.content;
         setData(result);
         setIsLoading(false);
       } catch (e) {
@@ -35,15 +35,9 @@ const FeedItemSection = () => {
     getFeedData();
   }, []);
 
-  console.log(data);
-
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
-
-  if (!Array.isArray(data)) {
-    console.log('데이터가 배열이 아님!!');
-  }
 
   if (!data) return <></>;
   if (isLoading)
@@ -59,7 +53,7 @@ const FeedItemSection = () => {
         {Array.isArray(data) &&
           data.map((data) => (
             <ItemWrapper key={data.id} onClick={() => setIsModalOpen(true)}>
-              <FeedCard imageUrl={data.imageUrl} title={data.title} />
+              <FeedCard imageUrl={data.imageUrl} title={data.content} />
             </ItemWrapper>
           ))}
       </CommonGrid>
