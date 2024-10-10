@@ -6,10 +6,9 @@ import { FaSearch } from "react-icons/fa"
 
 const SearchBox = () => {
   const [inputValue, setInputValue] = useState<string>('');
-"K442836380"
   const fetchBookInfo =  async (title: string)  => {
     try {
-      const response = await instance.get(`/api/books/${title}`, {
+      const response = await instance.get(`/api/books/search`, {
         params: { title }, 
       });
       console.log('책 정보:', response.data);

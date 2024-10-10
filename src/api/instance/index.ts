@@ -8,7 +8,7 @@ const accessToken = parsedToken?.accessToken;
 
 const instance = axios.create({
     baseURL: baseURL,
-    timeout: 10 * 1000,
+    timeout: 10 * 10000,
     headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
