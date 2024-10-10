@@ -6,10 +6,10 @@ import { FaSearch } from "react-icons/fa"
 
 const SearchBox = () => {
   const [inputValue, setInputValue] = useState<string>('');
-
+"K442836380"
   const fetchBookInfo =  async (title: string)  => {
     try {
-      const response = await instance.get('/api/books/search', {
+      const response = await instance.get(`/api/books/${title}`, {
         params: { title }, 
       });
       console.log('책 정보:', response.data);
@@ -20,7 +20,7 @@ const SearchBox = () => {
 
   const handleSearch = () => {
     if (inputValue) {
-      fetchBookInfo(inputValue); // inputValue를 title로 전달
+      fetchBookInfo(inputValue);
     } else {
       console.log('검색어를 입력하세요.');
     }
@@ -33,7 +33,7 @@ const SearchBox = () => {
             type='text'
             placeholder='책 제목을 입력해주세요.'
             focusBorderColor="gray.400"
-            width="100%"  // 전체 너비 사용 (InputGroup 내에서 조절)
+            width="100%" 
             onChange={(e) => setInputValue(e.target.value)}
           />
           <InputRightElement>
@@ -50,7 +50,5 @@ const SearchBox = () => {
   )
 
 }
-
-
 
 export default SearchBox;
