@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "@/pages/Home";
 import LoginPage from "@/pages/Login";
-import OauthPage from "@/pages/Oauth";
+import BookSearchPage from "@/pages/BookSearch";
 import FeedPage from "@/pages/Feed";
 
 
@@ -34,12 +34,12 @@ const router = createBrowserRouter([
         element: <LoginPage />,
     },
     {
-        path: RouterPath.Oauth,
-        element: <OauthPage />,
-    },
-    {
         path: RouterPath.feed,
         element: <FeedPage />,
+    },
+    {
+        path: RouterPath.bookSearch,
+        element: <BookSearchPage />,
     },
 ]);
 

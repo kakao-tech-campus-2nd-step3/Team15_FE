@@ -6,8 +6,9 @@ export const RouterPath = {
     myPage: '/mypage/:useerId',  // 마이 페이지
     login: '/login',  // 로그인 페이지
     notFound: '/*',
-    Oauth: REDIRECT_PATH, // 소셜로그인 리다이렉트 주소 
     feed: '/feed',
+    bookSearch: '/book/search',
+
 };
 
 // 지금은 필요 X; 논의 후 구현

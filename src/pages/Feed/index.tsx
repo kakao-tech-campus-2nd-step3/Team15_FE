@@ -1,10 +1,10 @@
+import CommonHeader from "@/components/common/Header";
 import Navbar from "@/components/feature/feed/Navbar"
-import MainHeader from "@/components/feature/home/Header";
-
 const FeedPage = () =>{
+
   return(
     <>
-      <MainHeader />
+      <CommonHeader />
       <Navbar/>
     </>
   )
