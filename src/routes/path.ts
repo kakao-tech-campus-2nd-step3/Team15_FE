@@ -7,6 +7,8 @@ export const RouterPath = {
     login: '/login',  // 로그인 페이지
     notFound: '/*',
     feed: '/feed',
+    bookSearch: '/book/search',
+
 };
 
 // 지금은 필요 X; 논의 후 구현
