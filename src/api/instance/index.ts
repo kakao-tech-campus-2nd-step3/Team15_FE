@@ -1,13 +1,18 @@
 import axios from 'axios';
 
-// const baseURL = process.env.VITE_BASE_URL;
+const baseURL = import.meta.env.VITE_BASE_URL;
+const jwtToken = localStorage.getItem('jwt_token');
+const parsedToken = jwtToken ? JSON.parse(jwtToken) : null;
+const accessToken = parsedToken?.accessToken;
+
 
 const instance = axios.create({
-    baseURL: process.env.VITE_BASE_URL,
-    timeout: 10 * 1000,
+    baseURL: baseURL,
+    timeout: 10 * 10000,
     headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
     },
 });
 

@@ -8,8 +8,8 @@ type Props = {
 const CommonGrid: React.FC<Props> = ({ children, columns, ...props }: Props ) => {
     return(
         <Wrapper columns={columns} {...props}>
-        {children}
-    </Wrapper>
+            {children}
+        </Wrapper>
     )
 }
 
