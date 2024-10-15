@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import FeedCard from '@/components/feature/feed/post/Card';
 import { Spinner } from '@/components/common/Spinner';
 import axios from 'axios';
-// import PostStoryModal from '@/components/modals/stories/PostStory';
+// import PostStoryModal from '@/components/feature/modals/stories/PostStory';
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const FeedItemSection = () => {
@@ -32,6 +32,13 @@ const FeedItemSection = () => {
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
+
+  // 모달 열려있을 때, 스크롤 금지, 닫았을 때 다시 스크롤
+  if (isModalOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 
   if (!data) return <></>;
   if (isLoading)
