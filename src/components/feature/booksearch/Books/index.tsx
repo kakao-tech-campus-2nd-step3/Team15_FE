@@ -16,6 +16,7 @@ const Books: React.FC = () => {
           const response = await instance.get(`/api/books/search`, {
             params: { title: searchQuery },
           });
+          console.log(response.data);
           setBooks(response.data.content); 
         } catch (error) {
           console.error('책 정보 가져오기 실패:', error);

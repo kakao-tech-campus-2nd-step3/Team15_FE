@@ -10,12 +10,12 @@ type BookProps = {
 };
 
 const BookCard: React.FC<BookProps> = ({ image, title, author, date }) => {
-  const [isHovered, setIsHovered] = useState(false); // hover 상태 관리
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Wrapper 
       onMouseEnter={() => setIsHovered(true)} 
-      onMouseLeave={() => setIsHovered(false)} // hover 상태 감지
+      onMouseLeave={() => setIsHovered(false)}
     >
       <StyledImage src={image} alt={title} />
       <TextContainer>
