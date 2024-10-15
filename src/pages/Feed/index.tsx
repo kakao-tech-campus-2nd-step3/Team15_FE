@@ -1,4 +1,5 @@
 import CommonHeader from "@/components/common/Header";
+import FeedItemSection from "@/components/feature/feed/section/FeedItems";
 import Navbar from "@/components/feature/feed/section/Navbar"
 const FeedPage = () =>{
 
@@ -6,6 +7,7 @@ const FeedPage = () =>{
     <>
       <CommonHeader />
       <Navbar/>
+      <FeedItemSection />
     </>
   )
 }
