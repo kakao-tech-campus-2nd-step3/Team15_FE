@@ -43,15 +43,14 @@ const FeedItemSection = () => {
     setSelectedType(null)
   };
 
-
-
-  if (!data) return <></>;
-
-    if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
+  // 모달 열려있을 때, 스크롤 금지, 닫았을 때 다시 스크롤
+  if (isModalOpen) {
+    document.body.style.overflow = 'hidden';
   } else {
-      document.body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = 'auto';
+  }
+  
+  if (!data) return <></>;
 
   return (
     <Wrapper>
