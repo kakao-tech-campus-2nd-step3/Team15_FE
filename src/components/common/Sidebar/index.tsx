@@ -38,7 +38,7 @@ const LoginButton = styled(StyledButton)`
 `;
   
   
-  function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: any }) {  
+  function Sidebar({ isOpen, setIsOpen}: { isOpen: boolean; setIsOpen: any}) {  
     const outside = useRef<any>();   
     useEffect(() => {    
       document.addEventListener('mousedown', handlerOutside);    
@@ -79,7 +79,7 @@ const LoginButton = styled(StyledButton)`
 
         <Box display="flex" justifyContent="center" marginTop="auto">
           <Link to="/login">
-            <LoginButton>login</LoginButton>
+            <LoginButton>Login</LoginButton>
           </Link>
         </Box>
         </SideBarWrap>  
