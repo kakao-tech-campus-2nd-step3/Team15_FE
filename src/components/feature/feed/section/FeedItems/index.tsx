@@ -1,7 +1,6 @@
 import CommonGrid from '@/components/common/Grid';
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import { Spinner } from '@/components/common/Spinner';
 import axios from 'axios';
 import { Skeleton } from '@chakra-ui/react';
 import StoryDetailModal from '@/components/feature/modals/stories/ContentDetail';
