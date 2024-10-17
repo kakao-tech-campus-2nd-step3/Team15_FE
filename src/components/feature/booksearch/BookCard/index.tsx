@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { Box, Image, Text, Button } from "@chakra-ui/react";
 import styled from '@emotion/styled';
 
@@ -9,13 +9,14 @@ type BookProps = {
   date: string;
 };
 
-const BookCard: React.FC<BookProps> = ({ image, title, author, date }) => {
-  const [isHovered, setIsHovered] = useState(false); // hover 상태 관리
+const BookCard = forwardRef<HTMLDivElement, BookProps>(({ image, title, author, date },ref) => {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Wrapper 
+      ref={ref}
       onMouseEnter={() => setIsHovered(true)} 
-      onMouseLeave={() => setIsHovered(false)} // hover 상태 감지
+      onMouseLeave={() => setIsHovered(false)}
     >
       <StyledImage src={image} alt={title} />
       <TextContainer>
@@ -36,17 +37,18 @@ const BookCard: React.FC<BookProps> = ({ image, title, author, date }) => {
       )}
     </Wrapper>
   );
-};
+});
 
 export default BookCard;
 
-const Wrapper = styled(Box)`
+const Wrapper = styled(Box)` 
   border-radius: 10px;
   overflow: hidden;
   position: relative;
   width: 100%;
   max-width: 18vw;
   margin: 0 auto;
+  margin-bottom: 20px;
 `;
 
 const StyledImage = styled(Image)`
