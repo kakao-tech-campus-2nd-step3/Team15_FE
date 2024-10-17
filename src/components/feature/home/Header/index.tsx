@@ -16,7 +16,7 @@ const MainHeader = () => {
       </Left>
       <Right>
         <GiHamburgerMenu size={'3vw'} color={'white'} onClick={toggleSide}/>
-        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/>
         <OverlayWrapper isOpen={isOpen}/>
       </Right>
     </Wrapper>

@@ -5,7 +5,7 @@ import Mainlogo from './logo';
 const Welcome = () => {
   return (
     <Wrapper>
-      <MainHeader />
+      <MainHeader/>
       <Box>
         <Mainlogo />
       </Box>

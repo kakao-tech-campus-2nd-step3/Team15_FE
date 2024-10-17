@@ -1,4 +1,3 @@
-// import SearchBox from "@/components/feature/booksearch/SearchBox"
 import Books from "@/components/feature/booksearch/Books"
 import CommonHeader from "@/components/common/Header";
 
