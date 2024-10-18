@@ -73,7 +73,9 @@ const LoginButton = styled(StyledButton)`
           <StyledButton>
             <Link to="/feed">Feed</Link>
           </StyledButton><br/>    
-          <StyledButton>Challenge</StyledButton><br/>
+          <StyledButton>
+            <Link to="/challenge">Challenge</Link>
+            </StyledButton><br/>
           <StyledButton>Diary</StyledButton><br/>
           <StyledButton>MyPage</StyledButton><br/>
 
