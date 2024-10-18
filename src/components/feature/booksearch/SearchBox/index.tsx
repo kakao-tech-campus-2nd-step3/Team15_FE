@@ -27,6 +27,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ setSearchQuery }) => {
           width="100%" 
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)} 
+          onKeyPress={handleSearch}
         />
         <InputRightElement>
           <IconButton

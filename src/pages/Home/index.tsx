@@ -20,7 +20,7 @@ const Homepage = () => {
       })
         .then(response => {
           localStorage.setItem('jwt_token', JSON.stringify(response.data.token));
-          window.location.href = '/';
+          // window.location.href = '/';
           console.log(response.data);
           setLogin(true);
           console.log('api 요청');
@@ -33,7 +33,7 @@ const Homepage = () => {
 
   return (
     <Wrapper>
-      <Welcome />
+      <Welcome/>
       <StoryIntro />
       <ChalleneIntro />
       <FavoriteIntro />
