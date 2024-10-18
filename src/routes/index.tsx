@@ -3,6 +3,8 @@ import HomePage from "@/pages/Home";
 import LoginPage from "@/pages/Login";
 import BookSearchPage from "@/pages/BookSearch";
 import FeedPage from "@/pages/Feed";
+import ChallengePage from "@/pages/Challenge";
+
 
 
 
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
     {
         path: RouterPath.feed,
         element: <FeedPage />,
+    },
+    {
+        path: RouterPath.challenge,
+        element: <ChallengePage />,
     },
     {
         path: RouterPath.bookSearch,
