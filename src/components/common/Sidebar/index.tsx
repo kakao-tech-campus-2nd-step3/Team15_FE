@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Divider,Box } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FiGithub, FiInstagram } from 'react-icons/fi';
+
 const SideBarWrap = styled.div`  
 z-index: 10;  
 padding: 12px;  
@@ -31,14 +32,19 @@ cursor: pointer;
   
 const LoginButton = styled(StyledButton)`
   position: absolute;
-  bottom: 20px; /* 하단에서 20px 위에 고정 */
+  bottom: 20px;
   font-size: 3vw;
   left: 50%;
   transform: translateX(-50%);
 `;
+ 
+interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
   
-  
-  function Sidebar({ isOpen, setIsOpen}: { isOpen: boolean; setIsOpen: any}) {  
+function Sidebar({ isOpen, setIsOpen}: SidebarProps) {  
+
     const outside = useRef<any>();   
     useEffect(() => {    
       document.addEventListener('mousedown', handlerOutside);    
@@ -53,7 +59,7 @@ const LoginButton = styled(StyledButton)`
               const toggleSide = () => {
                 setIsOpen(false);  
               };   
-              return (
+    return (
       <>
         <SideBarWrap id="sidebar" ref={outside} className={isOpen ? 'open' : ''}>
         <Box display="flex" justifyContent="flex-end" alignItems="center" height="50px" mb="10px" marginRight={"5vw"}>
@@ -86,6 +92,7 @@ const LoginButton = styled(StyledButton)`
         </Box>
         </SideBarWrap>  
       </>    
-);} 
+    )
+;} 
 
 export default Sidebar;
