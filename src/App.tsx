@@ -1,8 +1,11 @@
+import { Routes } from "@/routes"
+import { ChakraProvider } from "@chakra-ui/react"
+
 function App() {
   return (
-    <>
-        CoolKids
-    </>
+  <ChakraProvider>
+    <Routes />
+  </ChakraProvider>
   )
 }
 
