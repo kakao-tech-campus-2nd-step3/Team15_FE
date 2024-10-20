@@ -1,0 +1,46 @@
+name: rebit_fe_ci
+
+on:
+  push:
+    branches:
+      - Weekly
+    paths: 
+      - src/**
+  pull_request:
+    branches:
+      - Weekly
+    paths:
+      - src/**
+
+jobs:
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use repository source
+        uses: actions/checkout@v4.1.7
+        
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.3
+        with:
+          node-version: '20.x'
+  
+      - name: Install dependencies
+        run: npm ci
+      - name: build
+        run: npm run build --if-present
+      # - name: Test code
+      #   run: npm test 
+        
+      # - name: if fail
+      #   uses: actions/github-script@7.0.1
+      #   with:
+      #     github-token: ${{github.token}}
+      #     script: |
+      #       const ref = ${{github.ref}}
+      #       const pull_number = Number(ref.split("/")[2])
+      #       await github.pulls.createReview({
+      #         ...context.repo,
+      #         pull_number,
+      #         body: "테스트 코드를 다시 확인하세요. ",
+      #         event: "REQUEST_CHANGES"
+      #       })
