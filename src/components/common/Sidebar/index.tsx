@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import { Divider,Box } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FiGithub, FiInstagram } from 'react-icons/fi';
+import { useAuth } from '@/provider/Auth';
+
 const SideBarWrap = styled.div`  
 z-index: 10;  
 padding: 12px;  
@@ -39,6 +41,8 @@ const LoginButton = styled(StyledButton)`
   
   
   function Sidebar({ isOpen, setIsOpen}: { isOpen: boolean; setIsOpen: any}) {  
+    const { isLogin} = useAuth();
+    
     const outside = useRef<any>();   
     useEffect(() => {    
       document.addEventListener('mousedown', handlerOutside);    
@@ -81,7 +85,7 @@ const LoginButton = styled(StyledButton)`
 
         <Box display="flex" justifyContent="center" marginTop="auto">
           <Link to="/login">
-            <LoginButton>Login</LoginButton>
+            <LoginButton> {isLogin ? '로그아웃' : '로그인'}</LoginButton>
           </Link>
         </Box>
         </SideBarWrap>  
