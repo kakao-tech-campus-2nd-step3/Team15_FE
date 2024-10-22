@@ -1,17 +1,19 @@
 import CommonGrid from '@/components/common/Grid';
-import CommonModal from '@/components/common/Modal';
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import FeedCard from '@/components/feature/feed/post/Card';
-import { Spinner } from '@/components/common/Spinner';
 import axios from 'axios';
-// import PostStoryModal from '@/components/feature/modals/stories/PostStory';
+import { Skeleton } from '@chakra-ui/react';
+import StoryDetailModal from '@/components/feature/modals/stories/ContentDetail';
+import FeedCard from '@/components/feature/feed/post/Card';
+// import PostStoryModal from '@/components/modals/stories/PostStory';
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const FeedItemSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [selectedType, setSelectedType] = useState<'S' | 'FB' | 'M' | null>(null);
 
   useEffect(() => {
     async function getFeedData() {
@@ -29,8 +31,16 @@ const FeedItemSection = () => {
     getFeedData();
   }, [setData]);
 
+  const handleCardClick = (id: number, type: 'S' | 'FB' | 'M') => {
+    setSelectedId(id);
+    setIsModalOpen(true)
+    setSelectedType(type)
+  }
+
   const handleModalClose = () => {
     setIsModalOpen(false);
+    setSelectedId(null)
+    setSelectedType(null)
   };
 
   // 모달 열려있을 때, 스크롤 금지, 닫았을 때 다시 스크롤
@@ -39,31 +49,49 @@ const FeedItemSection = () => {
   } else {
     document.body.style.overflow = 'auto';
   }
-
+  
   if (!data) return <></>;
-  if (isLoading)
-    return (
-      <>
-        <Spinner />
-      </>
-    );
 
   return (
     <Wrapper>
-      <CommonGrid columns={4} gap={50}>
-        {Array.isArray(data) &&
-          data.map((data) => (
-            <ItemWrapper key={data.id} onClick={() => setIsModalOpen(true)}>
-              <FeedCard imageUrl={data.presignedUrl} title={data.content} />
-            </ItemWrapper>
-          ))}
-      </CommonGrid>
-      {isModalOpen && (
-        <CommonModal
-          isModalOpen={isModalOpen}
-          handleModalClose={handleModalClose}
-        />
-      )}
+      <Skeleton isLoaded={!isLoading}>
+        <CommonGrid columns={4} gap={50}>
+          {Array.isArray(data) &&
+            data.map((data) => (
+              <ItemWrapper key={data.id} onClick={() => handleCardClick(data.id, data.type)}>
+                <FeedCard imageUrl={data.presignedUrl} title={data.content} />
+              </ItemWrapper>
+            ))}
+        </CommonGrid>
+        {isModalOpen && selectedId !== null &&  selectedType !== null && (
+          <>
+            {selectedType === 'S' && (
+              <StoryDetailModal
+                isModalOpen={isModalOpen}
+                handleModalClose={handleModalClose}
+                id={selectedId}
+                type="S"
+              />
+            )}
+            {/*{selectedType === 'FB' && (*/}
+            {/*  <FavBookDetailModal*/}
+            {/*    isModalOpen={isModalOpen}*/}
+            {/*    handleModalClose={handleModalClose}*/}
+            {/*    id={selectedId}*/}
+            {/*    type="FB"*/}
+            {/*  />*/}
+            {/*)}*/}
+            {/*{selectedType === 'M' && (*/}
+            {/*  <MagazineDetailModal*/}
+            {/*    isModalOpen={isModalOpen}*/}
+            {/*    handleModalClose={handleModalClose}*/}
+            {/*    id={selectedId}*/}
+            {/*    type="M"*/}
+            {/*  />*/}
+            {/*)}*/}
+          </>
+        )}
+      </Skeleton>
     </Wrapper>
   );
 };

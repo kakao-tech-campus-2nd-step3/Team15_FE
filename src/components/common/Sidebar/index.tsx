@@ -6,7 +6,7 @@ import { FiGithub, FiInstagram } from 'react-icons/fi';
 import { useAuth } from '@/provider/Auth';
   
 function Sidebar({ isOpen, setIsOpen}: { isOpen: boolean; setIsOpen: any}) {  
-  const { isLogin, setLogin} = useAuth();
+  const { isLogin, setLogin } = useAuth();
   const navigate = useNavigate();
   const outside = useRef<any>();   
 
@@ -16,21 +16,23 @@ function Sidebar({ isOpen, setIsOpen}: { isOpen: boolean; setIsOpen: any}) {
       document.removeEventListener('mousedown', handlerOutside);    
     }; 
   });   
+  
   const handlerOutside = (e: any) => {
     if (!outside.current.contains(e.target)) {
       toggleSide();    }  
     };   
     
-    const handleLogout = () => {
-      localStorage.removeItem('jwt_token'); 
-      setLogin(false);
-      navigate('/'); 
-    }
-
-    const toggleSide = () => {
-                setIsOpen(false);  
-              };   
-              return (
+  const handleLogout = () => {
+    localStorage.removeItem('jwt_token'); 
+    setLogin(false);
+    navigate('/'); 
+  }
+   
+  const toggleSide = () => {
+    setIsOpen(false);  
+  };
+  
+    return (
       <>
         <SideBarWrap id="sidebar" ref={outside} className={isOpen ? 'open' : ''}>
         <Box display="flex" justifyContent="flex-end" alignItems="center" height="50px" mb="10px" marginRight={"5vw"}>
@@ -63,7 +65,8 @@ function Sidebar({ isOpen, setIsOpen}: { isOpen: boolean; setIsOpen: any}) {
         </Box>
         </SideBarWrap>  
       </>    
-);} 
+    )
+;} 
 
 export default Sidebar;
 
