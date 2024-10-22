@@ -5,12 +5,14 @@ import FavoriteIntro from '@/components/feature/home/Favorite';
 import StoryIntro from '@/components/feature/home/Story';
 import Footer from '@/components/feature/home/Footer';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
+import { useAuth } from '@/provider/Auth';
+
 const VITE_BASE_URL = import.meta.env.VITE_BASE_URL;
 
 
 const Homepage = () => {
-  const [isLogin, setLogin] = useState(false);
+  const { isLogin, setLogin } = useAuth();
 
   useEffect(() => {
     const code = new URLSearchParams(window.location.search).get('code');
@@ -29,7 +31,7 @@ const Homepage = () => {
             console.error('로그인 실패:', error);
           });
     }
-  }, [isLogin]);
+  }, [isLogin, setLogin]);
 
   return (
     <Wrapper>
