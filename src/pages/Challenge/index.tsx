@@ -8,7 +8,7 @@ const ChallengePage = () =>{
     <>
       <CommonHeader />
       <Navbar/>
-      <WriteButton></WriteButton>
+      <WriteButton/>
     </>
   )
 }

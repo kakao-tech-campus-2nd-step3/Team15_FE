@@ -23,7 +23,7 @@ const Button = styled.button`
   background-color: #474747;
   color: white;
   border-radius: 20px;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
   font-weight: bold;
   opacity: 0.8;
   &:hover {
